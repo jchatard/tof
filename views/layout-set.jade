@@ -1,0 +1,111 @@
+doctype 5
+!= '\n<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->\n'
+!= '<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->\n'
+!= '<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="fr"><!--<![endif]-->'
+  head
+    title= title + ' - Jérémy'
+    meta(name='HandheldFriendly', content='True')
+    meta(name='MobileOptimized', content='320')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(property='fb:admins', content='632742068')
+    meta(property='og:site_name', content='Jérémy Chatard')
+    meta(property='article:author', content='http://jchatard.com')
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=description.replace(/<(?:.|\n)*?>/gm, ''))
+    meta(property='og:type', content='article')
+    meta(property='og:url', content='http://photos.jchatard.com/set/' + folder + '/')
+    each image in images
+      meta(property='og:image', content='http://photos.jchatard.com/set/' + folder + '/' + image.get('filename'))
+      meta(property='og:image:width', content='959')
+      meta(property='og:image:height', content='640')
+    meta(property='fb:app_id', content='554077307941955')
+    script(src='/javascripts/modernizr-2.6.2.min.js')
+    script(src= blog_url + '/javascripts/ender.js')
+    script(src= blog_url + '/javascripts/octopress.js')
+    link(href= blog_url + '/stylesheets/screen.css', rel='stylesheet')
+    link(href='/stylesheets/main.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic', rel='stylesheet', type='text/css')
+
+    script(type='text/javascript')
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53104-22']);
+      _gaq.push(['_setDomainName', 'jchatard.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  body
+    #fb-root
+    script
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#appId=554077307941955&xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    header(role='banner')
+      hgroup
+        h1
+          a(href='http://jchatard.com') Jérémy
+        h2 Parti là-bas, voir si j'y suis.
+
+    nav(role='navigation')
+      ul.subscription(data-subscription='rss')
+        li
+          a(href='/atom.xml', rel='subscribe-rss', title='subscribe via RSS') RSS
+      form(action='http://google.com/search', method='get')
+        fieldset(role='search')
+          input(type='hidden', name='q', value='site:jchatard.com')
+          input.search(type='text', name='q', results='0', placeholder='Search')
+
+      ul.main-navigation
+        li
+          a(href=blog_url) Blog
+        li
+          a(href='/') Photos
+        li
+          a(href=blog_url + '/carte') Carte
+        li
+          a(href=blog_url + '/blog/archives') Archives
+        li
+          a(href=blog_url + '/a-propos') A propos
+
+    #main
+      #content
+        .blog-index
+          article
+            block content
+            .fb-like(data-send='true', data-layout='button_count', data-width='450', data-show-faces='false')
+    footer(role='contentinfo')
+      p Copyright &copy; 2012 - Jérémy Chatard -&nbsp;
+        span.credit Powered by&nbsp;
+          a(href='http://octopress.org') Octopress
+
+    script
+      var y = window.pageYOffset;
+      Modernizr.load(
+      [
+        {
+          load: '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js',
+          complete: function () {
+            if ( !window.jQuery ) {
+              Modernizr.load('/javascripts/jquery-1.8.2.min.js');
+            }
+          }
+        },
+        {
+          load: '/javascripts/ResponsiveSlides.js/responsiveslides.min.js',
+        },
+        {
+          load: '/javascripts/scripts.js',
+          complete: function () {
+            Set.loadSlider();
+            Set.attachKeyboardEvents();
+            Set.goToInitPosition();
+          }
+        }
+      ]);

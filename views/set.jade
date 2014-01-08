@@ -1,0 +1,32 @@
+extends layout-set
+
+block content
+  h1= title
+  ul.rslides
+
+    each image in images
+      li
+        figure
+          img(src=image.get('src'), alt=image.get('title'))
+          figcaption
+            if (image.get('title'))
+              = image.get('title')
+            &nbsp;
+            br
+            small
+              if (image.get('caption'))
+                = image.get('caption')
+                &nbsp;
+
+              em.meta
+                - var date = image.getExifValueOutput('Date Created');
+                - date = date.replace(/([0-9]{4})(:)([0-9]{2})(:)([0-9]{2}) (([0-9]{2}):([0-9]{2}):([0-9]{2})).*/g, "$5/$3/$1");
+                - var metas = [];
+                - metas.push(image.getExifValueOutput('Country'));
+                - metas.push(image.getExifValueOutput('City'));
+                - metas.push(date);
+                = image.printMetasSeparatedByCommas(metas)
+                &nbsp;
+
+  if (description)
+    .description!= description

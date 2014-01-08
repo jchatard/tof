@@ -1,0 +1,163 @@
+article img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 0;
+  -moz-box-shadow: 0 0 0;
+  -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+  border: 0;
+}
+
+figure {
+  margin: 0 0 7px 0;
+  padding: 0;
+}
+
+figure h2 {
+  font-size: 1.1em;
+}
+
+figcaption {
+  position: relative;
+  margin-top: 10px;
+}
+
+#content {
+  margin-right: 0;
+}
+
+div#content div article,
+#content > article {
+  position: relative;
+}
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rslides li {
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
+.rslides_tabs {
+  padding-left: 0;
+  font-size: .8em;
+  padding-right: 70px;
+  line-height: 17px;
+  margin-left: 0;
+}
+
+.rslides_tabs li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 3px;
+}
+
+.rslides_nav:hover {
+  text-decoration: none;
+}
+
+.rslides_nav.prev,
+.rslides_nav.next {
+  color: rgba(34, 34, 34, 1);
+  font-weight: bold;
+  margin-top: 2px;
+  padding-right: inherit;
+  position: absolute;
+  right: 40px;
+  text-decoration: none;
+  text-indent: -9000px;
+  display: block;
+  overflow: hidden;
+  background: transparent url(/images/arrow-left.png) no-repeat top left;
+  width: 26px;
+  height: 26px;
+  opacity: .3;
+}
+
+.rslides_nav.next {
+  right: 5px;
+  background: transparent url(/images/arrow-right.png) no-repeat top left;
+}
+
+.rslides_tabs a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.rslides_here a:hover {
+  color: #1a1a1a;
+}
+
+.rslides_tabs a {
+  text-indent: -9999px;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background: #aaa;
+  background: rgba(170, 170, 170, .5);
+  display: inline-block;
+  _display: block;
+  *display: block;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  -moz-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+  width: 9px;
+  height: 9px;
+}
+
+.rslides_tabs .rslides_here a {
+  background: #eee;
+  background: rgba(0, 0, 0, .8);
+}
+
+div.description {
+  padding-top: 30px;
+  font-size: .9em;
+}
+
+div.description a {
+  text-decoration: underline;
+}
+
+img.tease:hover {
+  -webkit-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+}
+
+em.meta {
+  opacity: .6;
+}
+
+.fb-like {
+  margin-bottom: 10px
+}
+
+.toggle-sidebar {
+  display: none;
+}

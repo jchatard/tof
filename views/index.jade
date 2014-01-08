@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  header
+    h1.entry-title Photos
+
+  ul
+    each set in sets
+      li
+        a(href='/set/' + set.get('folder'))= set.get('title')
+        if set.getMeta('tag_line')
+          &nbsp;
+          em= set.getMeta('tag_line')
