@@ -1,0 +1,14 @@
+---
+title: Derek Worthen
+published: false
+email: jeremy.chatard@gmail.com
+photos:
+  - 001.jpg
+  - 002.jpg
+  - 003.jpg
+meta_keywords: landscape, co-worker, portrait
+meta_description: Some description for search engines.
+---
+Here is some description in _Markdown_ format.
+
+Their should be as little formatting as possible, but as long as it stands in the *markdown scope*, it should be ok.
